@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Traverse Computation</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="traverseform.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Traverse Computation</h1>
+
+      <div class="input-output">
+
+        <div>
+            <h4 class="results-title section-title">INITIAL INPUT</h4>
+        <div class="initial-input">
+          <div class="numOfStations-input">
+            <label for="numStations">Enter Total Number of stations</label>
+            <input
+              onchange="addStations()"
+              max="10"
+              min="3"
+              type="number"
+              name="numStations"
+              id="numStations"
+              placeholder="Enter Number of Stations"
+            />
+          </div>
+          <div class="easting-input">
+            <label for="eastingKnown">Enter Easting coords for known station</label>
+            <input
+              type="number"
+              placeholder="Enter easting coords"
+              name="easting"
+              id="eastingKnown"
+            />
+          </div>
+    
+          <div class="northing-input">
+            <label for="northingKnown"
+              >Enter Northing coords for known station</label
+            >
+            <input
+              type="number"
+              placeholder="Enter northing coords"
+              name="northing"
+              id="northingKnown"
+            />
+          </div>
+        </div>
+        </div>
+
+          <div class="results">
+            
+          <h4 class="results-title section-title">ADDITIONAL METRICS</h4>
+            <div>
+              <span>Sum delta E:</span>
+              <span id="sum-del-e"  class="value">N/A</span>
+            </div>
+            <div>
+              <span>Sum delta N:</span>
+              <span id="sum-del-n" class="value">N/A</span>
+            </div>
+            <div>
+              <span>Closing Error:</span>
+              <span id="closingError" class="value">N/A</span>
+            </div>
+            <div>
+                <span>Linear Accuracy:</span>
+                <span id="linearAccuracy" class="value">N/A</span>
+            </div>
+      </div>
+    </div>
+
+    <div class="btn-container">
+      <button onclick="populateDummyData()">Populate Dummy Data</button>
+      <button onclick="validateObservedAngles()">Validate Angles</button>
+      <button onclick="calculateEasting()">Calculate Easting</button>
+      <button onclick="calculaeNorthing()">Calculate Northing</button>
+      <button onclick="calculate()">Check Accuracy</button>
+    </div>
+
+    <h4 class="section-title">Table 1: Latitude and Departure</h4>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Station</th>
+          <th>Observed Angle</th>
+          <th>Corrected Angle</th>
+          <th>Length</th>
+          <th>Bearing</th>
+          <th>Easting</th>
+          <th>del E</th>
+          <th>Northing</th>
+          <th>del N</th>
+        </tr>
+      </thead>
+      <tbody id="table-body"></tbody>
+    </table>
+
+    <h4 class="section-title">Table 2: Elevation</h4>
+
+    <table id="z-table">
+      <thead>
+        <tr>
+          <th>Station</th>
+          <th>Zenithal Angle</th>
+          <th>Height of Instrument</th>
+          <th>Height of Target</th>
+          <th>del H</th>
+          <th>Correct Height</th>
+        </tr>
+      </thead>
+      <tbody id="z-body"></tbody>
+    </table>
+
+    <script src="traverse.js"></script>
+  </body>
+</html>

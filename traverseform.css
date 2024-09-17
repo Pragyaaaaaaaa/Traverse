@@ -1,0 +1,141 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ac8fbf;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+}
+
+.container {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    min-width: 80vw;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    /* width: fit-content; */
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 5px;
+    text-align: center;
+}
+
+td input, td span {
+    font-size: 14px;
+}
+
+th {
+    background-color: #f9f9f9;
+    font-size: 13px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    background-color: #70329952;
+    color: #703299;
+    border-radius: 5px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: 1px solid #703299;
+}
+
+button:hover {
+    background-color: #703299;
+    color: white;
+    cursor: pointer;
+}
+
+#result {
+    margin-top: 20px;
+}
+
+#result p {
+    font-size: 16px;
+    color: #333;
+}
+
+.initial-input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 50vw;
+}
+
+.initial-input > div {
+    display: flex;
+    justify-content: flex-start;
+    gap: 8px;
+    align-items: center;
+}
+
+.initial-input label {
+    flex: 0.7;
+}
+
+.initial-input input {
+    flex: 1;
+    height: 25px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.btn-container {
+    margin-bottom: 15px;
+}
+
+* {
+    font-family: Poppins;
+}
+
+input {
+    padding-left: 10px;
+}
+
+h4, button, th {
+    font-family: Montserrat;
+}
+
+.results-title.section-title {
+    margin-bottom: 10px;
+}
+
+.input-output {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.results {
+    margin-left: 30px;    
+    border: 0.5px solid rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    padding-left: 60px;
+    padding-right: 60px;
+    margin-right: 100px;
+}
+
+.results .value {
+    font-weight: bold;
+    font-size: 15.5px;
+    font-family: Poppins;
+}
